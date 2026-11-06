@@ -16,10 +16,13 @@ void main() {
     // Create two `Point` objects: one representing the point (2, 5) and stored
     // in the variable `pointOne`, and the other representing the point (3, 0)
     // and stored in the variable `pointTwo`.
-
+    Point pointOne = new Point(2, 5);
+    Point pointTwo = new Point(2, 5);
 
     // On two separate lines, print the x-coordinate of pointOne,
     // and the y-coordinate of pointTwo, using the `Point` class's getter functions.
+    System.out.println(pointOne.getX());
+    System.out.println(pointTwo.getY());
 
     // Using the same getter functions and conditional statements,
     // print "Point one is farther right!" if `pointOne`'s x-coordinate is larger,
@@ -27,7 +30,11 @@ void main() {
     // After the code runs, change `pointOne`'s x-coordinate to -4, and
     // `pointTwo`'s x-coordinate to -5; the code should now print
     // "Point one is farther right!"
-
+    if (pointOne.getX() > pointTwo.getX()) {
+        System.out.println("Point one is farther right!");
+    } else {
+        System.out.println("Point two is farther right!");
+    }
 
     // Using the same getter functions, use conditional statements
     // to handle the following six cases:
@@ -39,7 +46,21 @@ void main() {
     // 6. Print "p2 origin" if `pointTwo` is at the origin.
     // After the code runs, change `pointOne` to (0, 0) and `pointTwo` to (0, 3).
     // You should now see "p1 x-axis", "p1 y-axis", "p1 origin", and "p2 y-axis".
+    if (pointOne.getY() == 0 & pointOne.getX() == 0){
+        System.out.println("p1 origin");
+    } else if (pointOne.getY() == 0){
+        System.out.println("p1 x-axis");
+    } else if (pointOne.getX() == 0){
+        System.out.println("p1 y-axis");
+    }
 
+    if (pointTwo.getY() == 0 & pointTwo.getX() == 0){
+        System.out.println("p2 origin");
+    } else if (pointTwo.getY() == 0){
+        System.out.println("p2 x-axis");
+    } else if (pointTwo.getX() == 0){
+        System.out.println("p2 y-axis");
+    }
 
     // Lastly, print "p1 equals p2!" if `pointOne` and `pointTwo`'s x- and y-
     // coordinates are equal, and "p1 does not equal p2" otherwise. After
@@ -48,5 +69,10 @@ void main() {
     // HINT: You might find it convenient to assign the result of the equality
     // check to a variable first, such as `pointsEqual`, then check the boolean
     // value of that in conditional statements.
+    if (pointOne.getX() == pointTwo.getX() & pointOne.getY() == pointTwo.getY()){
+        System.out.println("p1 equals p2!");
+    } else {
+        System.out.println("p1 does not equal p2");
+    }
 
 }
